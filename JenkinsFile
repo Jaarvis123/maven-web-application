@@ -5,6 +5,7 @@ echo "Node Name is: ${env.NODE_NAME}"
 echo "Jenkins url is: ${env.JENKINS_URL}"
 
 def mavenHome = tool name: 'maven3.8.5'
+
 //Get the code from Github Repo
 stage('CheckoutCode'){
 git branch: 'development', credentialsId: 'f1041dbb-daa3-4e0a-99d4-b513d7fe5349', url: 'https://github.com/Jaarvis123/maven-web-application.git'
