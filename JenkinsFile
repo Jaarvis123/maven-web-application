@@ -35,7 +35,7 @@ echo "Jenkins url is: ${env.JENKINS_URL}"
 
 def mavenHome = tool name: 'maven3.8.5'
 
-try{
+try{//Try Opening
 
 
 
@@ -69,7 +69,7 @@ sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@52
 
 }
 
-}
+}//Try Closing
 
  catch(e){
  currentBuild.result = "FAILED"
@@ -79,4 +79,4 @@ sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@52
  sendSlackNotifications(currentBuild.result)
  }
   
- }
+ }//Node Closing
