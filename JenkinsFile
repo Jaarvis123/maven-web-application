@@ -71,7 +71,7 @@ sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@52
 
 }
 
-}
+
 
 }//Try closing
   catch(e){
