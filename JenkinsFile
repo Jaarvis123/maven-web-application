@@ -71,9 +71,9 @@ sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@52
 
 
 }//Try closing
-   catch(e){
-   currentBuild.result = "FAILED"
-   }
+catch(e){
+currentBuild.result = "FAILED"
+}
   finally{
   
  sendSlackNotifications(currentBuild.result)
