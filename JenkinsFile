@@ -1,6 +1,6 @@
 def sendSlackNotifications(String buildStatus = 'STARTED') {
-  // build status of null means successful
-  buildStatus =  buildStatus ?: 'SUCCESSFUL'
+ 
+  buildStatus =  buildStatus ?: 'SUCCESS'
 
   // Default values
   def colorName = 'RED'
@@ -12,7 +12,7 @@ def sendSlackNotifications(String buildStatus = 'STARTED') {
   if (buildStatus == 'STARTED') {
     color = 'YELLOW'
     colorCode = '#FFFF00'
-  } else if (buildStatus == 'SUCCESSFUL') {
+  } else if (buildStatus == 'SUCCESS') {
     color = 'GREEN'
     colorCode = '#00FF00'
   } else {
@@ -70,13 +70,13 @@ sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@52
 }
 
 
-}//Try closing
-catch(e){
-currentBuild.result = "FAILED"
-}
-  finally{
+}//Try cLosing
+ catch(e){
+ currentBuild.result = "FAILED"
+ }
+ finally{
   
  sendSlackNotifications(currentBuild.result)
-  }
+ }
   
-  }//Node CLosing
+ }//Node CLosing
