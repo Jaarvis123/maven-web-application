@@ -37,8 +37,6 @@ def mavenHome = tool name: 'maven3.8.5'
 
 try{
 
-}//Try Closing
-
 }//Node Closing 
 
 //Get the code from Github Repo
@@ -70,7 +68,6 @@ sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@52
 }
 
 }
-
 
 
 }//Try closing
