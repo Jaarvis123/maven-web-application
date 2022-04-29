@@ -71,7 +71,7 @@ sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@52
 
 }
 
-}//Try cLosing
+}
  catch(e){
  currentBuild.result = "FAILED"
  }
@@ -80,4 +80,4 @@ sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@52
  sendSlackNotifications(currentBuild.result)
  }
   
- }//Node CLosing
+ }
