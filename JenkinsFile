@@ -48,7 +48,7 @@ git branch: 'development', credentialsId: 'f1041dbb-daa3-4e0a-99d4-b513d7fe5349'
 
 //Do  the build by suing Maven Build tool
 stage ('Build'){
-sh "${mavenHome}/bin/mvn clean packag"
+sh "${mavenHome}/bin/mvn clean package"
 }
 
 
